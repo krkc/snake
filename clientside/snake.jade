@@ -1,0 +1,34 @@
+extends ../../../views/game
+
+block gameIncludes
+  script(type='text/javascript', src='snkCGame.js')
+  script(type='text/javascript', src='javascript/NgRoom.js')
+  script(type='text/javascript', src='snkEnv.js')
+  script(type='text/javascript', src='snkCSnake.js')
+  script(type='text/javascript', src='snkCDot.js')
+  link(rel='stylesheet', href='snake.css')
+
+block gameContent
+  h2.page-header(style="text-align: center;")
+    | Escape the snake! Arrow keys to move.
+  div.container
+  div#scoreboard.container
+    div.row
+      div.col-xs-3
+        | Score: 
+      div.col-xs-6
+        | Opponent Score: 
+      div.col-xs-3
+        button#resetBtn.btn.btn-default.btn-xs
+          a(href="#") Reset
+    div.row
+      div.col-xs-3
+        span#myscorespan.badge 0
+      div.col-xs-6
+        span#oppscorespan.badge 0
+    p
+  div(style="clear: both;")
+  div#canvWrapper(style="margin-left: 4%; width: 90%; height: 83%; float: left")
+    canvas#canvbg(style="border: 1px solid #000000; position: absolute; z-index: 0")
+    canvas#canvfg(style="border: 1px solid #000000; position: absolute; z-index: 1")
+  div(style='clear: both; width: 100%;')
